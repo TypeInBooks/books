@@ -1,5 +1,5 @@
-Programming the Commodore 64  
-Rae West  
+## Programming the Commodore 64  
+*Level Computer Publishing (1985)*  
+Author: Rae West  
 
-Level Computer Publishing (1985)  
 First Edition  
