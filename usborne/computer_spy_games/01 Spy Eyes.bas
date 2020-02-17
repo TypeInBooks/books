@@ -12,11 +12,13 @@
 120 gosub 360
 130 gosub 310
 !- 140 cls:print                                                [BBC/ZX/TRS]
+!- 140 home:print                                               [Apple]
 140 print chr$(147):print
 150 print"which number moved"
 160 input a
 170 if a<>m then goto 250
 !- 180 cls:print                                                [BBC/ZX/TRS]
+!- 180 home:print                                               [Apple]
 180 print chr$(147):print
 190 print"well spied!"
 200 let p=p+1
@@ -25,6 +27,7 @@
 230 gosub 310
 240 goto 30
 !- 250 cls:print:print"wrong - end of go"                       [BBC/ZX/TRS]
+!- 250 home:print:print"wrong - end of go"                      [Apple]
 250 print chr$(147):print:print"wrong - end of go"
 260 print"correct answer was ";m
 270 print"you scored ";p;" points"
@@ -32,13 +35,16 @@
 290 input a$:if a$="y" then run
 300 stop
 !- 310 let i$=inkey$                                            [ZX/TRS]
+!- 310 let i$=inkey$(0)                                         [BBC]
 310 get i$
 320 if i$="" then goto 310
 330 return
-!- 340 let n=int(rnd*9)+1                                       [ZX/TRS]
+!- 340 let n=int(rnd*9)+1                                       [ZX]
+!- 340 let n=rnd(9)                                             [TRS]
 340 let n=int(rnd(1)*9)+1
 350 return
 !- 360 cls                                                      [BBC/ZX/TRS]
+!- 360 home                                                     [Apple]
 360 print chr$(147)
 370 for i=1 to 9
 !- 380 print tab(x(i),y(i));str$(i)                             [BBC]
