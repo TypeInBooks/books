@@ -1,0 +1,15 @@
+5 REM *** HI LOW *** 
+10 FOR M = 54272 TO 54296 : POKE M,0 : NEXT 
+20 PRINT CHR$(147) 
+30 PRINT "enter number then hit return" 
+40 PRINT "enter to end" 
+50 INPUT "high fq #";A 
+60 IF A = 0 THEN END 
+70 INPUT "low fq #";B 
+80 POKE 54296,15 
+90 POKE 54278,240 
+100 POKE 54273, A : POKE 54272,B 
+110 POKE 54276,17 
+120 FOR T = 1 TO 1000 : NEXT 
+130 POKE 54296,0 
+140 GOTO 10
